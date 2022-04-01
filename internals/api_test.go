@@ -5,8 +5,9 @@ import (
 )
 
 func TestHelloWorld(t *testing.T) {
-	result := Hello_world()
-	if result["hello"] != "world" {
-		t.Errorf("Result was incorrect, expected: %s, got: %s.", "world", result["hello"])
+	_, err := Hello_world()
+
+	if err != nil {
+		t.Fail()
 	}
 }
