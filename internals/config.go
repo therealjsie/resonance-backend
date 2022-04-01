@@ -26,7 +26,12 @@ func ReadConfig() Config {
 		panic(fmt.Errorf("Fatal error config file: %w \n", err))
 	}
 
-	config := Config{Host: viper.GetString("postgresql.host"), Port: viper.GetInt("postgresql.port"), Username: viper.GetString("postgresql.username"), Password: viper.GetString("postgresql.password"), Database: viper.GetString(("postgresql.database"))}
+	config := Config{
+		Host:     viper.GetString("postgresql.host"),
+		Port:     viper.GetInt("postgresql.port"),
+		Username: viper.GetString("postgresql.username"),
+		Password: viper.GetString("postgresql.password"),
+		Database: viper.GetString(("postgresql.database"))}
 	return config
 }
 

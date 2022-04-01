@@ -40,7 +40,8 @@ var serveCmd = &cobra.Command{
 }
 
 func posts_endpoint(c *gin.Context) {
-	posts, err := internals.Hello_world()
+	config := internals.ReadConfig()
+	posts, err := internals.Get_Posts(config)
 
 	if err != nil {
 		c.AbortWithStatusJSON(500, gin.H{
